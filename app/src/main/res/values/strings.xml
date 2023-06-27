@@ -1,3 +1,99 @@
 <resources>
     <string name="app_name">Wellness</string>
+    <string name="action_1">Go for a walk</string>
+    <string name="description_1">Walking is a simple yet effective way to improve cardiovascular health, strengthen muscles, and maintain a healthy weight. It boosts mood, reduces stress, and enhances overall well-being.</string>
+
+    <string name="action_2">Play fetch with your dog</string>
+    <string name="description_2">Playing fetch provides physical exercise for both you and your dog. It improves coordination, strengthens muscles, and promotes an active lifestyle. The repetitive motion helps burn calories, while the interaction and bonding with your pet reduce stress levels.</string>
+
+    <string name="action_3">Take your dog jogging</string>
+    <string name="description_3">Jogging with your dog is a high-energy activity that increases cardiovascular endurance, burns calories, and strengthens muscles. It releases endorphins, improves mental clarity, and helps maintain a healthy weight.</string>
+
+    <string name="action_4">Go hiking with your dog</string>
+    <string name="description_4">Hiking offers both physical and mental benefits. It strengthens your muscles, improves cardiovascular fitness, and increases flexibility. Spending time in nature reduces stress and anxiety, boosts mood, and provides a sense of serenity and well-being.</string>
+
+    <string name="action_5">Engage in agility training</string>
+    <string name="description_5">Agility training challenges both you and your dog. It improves coordination, speed, and agility while enhancing communication and teamwork. This activity increases mental stimulation and helps maintain a healthy weight for both of you.</string>
+
+    <string name="action_6">Take your dog for a swim</string>
+    <string name="description_6">Swimming is a low-impact exercise that works the entire body. It improves cardiovascular fitness, builds muscle strength, and increases endurance. Swimming also provides joint support, making it an ideal activity for dogs with joint issues.</string>
+
+    <string name="action_7">Participate in obedience training</string>
+    <string name="description_7">Obedience training not only teaches your dog important skills but also engages their mind. It promotes discipline, strengthens the bond between you and your pet, and boosts your dog\'s confidence. Training sessions provide mental stimulation for both of you, reducing boredom and promoting a harmonious relationship.</string>
+
+    <string name="action_8">Go biking with your dog</string>
+    <string name="description_8">Biking allows you and your dog to cover more ground and enjoy the outdoors together. It provides a vigorous cardiovascular workout, strengthens leg muscles, and improves overall fitness. Biking also offers mental stimulation for your dog as they navigate the changing scenery.</string>
+
+    <string name="action_9">Take your dog to the dog park</string>
+    <string name="description_9">Visiting the dog park provides socialization opportunities for your dog, promoting healthy interactions and reducing behavioral issues. It encourages exercise and play, contributing to weight management and overall well-being. For you, it\'s a chance to connect with fellow dog owners and build a sense of community.</string>
+
+    <string name="action_10">Play hide-and-seek with your dog</string>
+    <string name="description_10">Hide-and-seek is a mentally stimulating game that engages your dog\'s senses and natural instincts. It
+
+     enhances problem-solving abilities, reinforces obedience commands, and strengthens the bond between you and your pet. This activity keeps your dog active and mentally sharp.</string>
+
+    <string name="action_11">Try doga (dog yoga)</string>
+    <string name="description_11">Doga combines the benefits of yoga and bonding with your dog. It improves flexibility, balance, and core strength for both of you. Doga promotes relaxation, reduces anxiety, and enhances overall well-being through the calming connection between you and your pet.</string>
+
+    <string name="action_12">Engage in scent games</string>
+    <string name="description_12">Scent games tap into your dog\'s natural abilities and provide mental stimulation. They encourage problem-solving, enhance focus and concentration, and boost your dog\'s confidence. These games are entertaining and keep your dog's mind active and engaged.</string>
+
+    <string name="action_13">Volunteer with your dog</string>
+    <string name="description_13">Volunteering with your dog at local shelters or therapy programs benefits not only those you help but also your own well-being. It promotes a sense of purpose, boosts mood, and reduces stress levels. Your dog\'s presence brings joy and comfort to others, creating a positive impact.</string>
+
+    <string name="action_14">Try canine freestyle dancing</string>
+    <string name="description_14">Canine freestyle dancing combines creativity, coordination, and training. It strengthens the bond between you and your dog, promotes physical fitness, and enhances mental stimulation. Dancing together allows for self-expression and provides a fun and unique way to exercise.</string>
+
+    <string name="action_15">Practice mental enrichment activities</string>
+    <string name="description_15">Engaging your dog in mental enrichment activities such as puzzle toys or interactive games helps prevent boredom and stimulates their cognitive abilities. Mental stimulation reduces anxiety, promotes problem-solving, and improves overall well-being for your dog.</string>
+
+    <string name="action_16">Practice nose work</string>
+    <string name="description_16">Nose work activities tap into your dog\'s scenting abilities, providing mental stimulation and a sense of accomplishment. It improves focus, builds confidence, and provides an outlet for their natural instincts.</string>
+
+    <string name="action_17">Engage in flyball</string>
+    <string name="description_17">Flyball is a high-energy team sport that promotes agility, speed, and coordination for both you and your dog. It provides physical exercise, mental stimulation, and strengthens the bond between you and your pet.</string>
+
+    <string name="action_18">Take your dog to the beach</string>
+    <string name="description_18">Beach outings with your dog offer a combination of physical activity and mental relaxation. The sand provides resistance for exercise, while the sound of the waves and fresh sea air promote relaxation and stress relief.</string>
+
+    <string name="action_19">Participate in dock diving</string>
+    <string name="description_19">Dock diving is a thrilling water sport that allows your dog to jump into a pool or body of water. It promotes physical fitness, builds confidence, and provides a fun and exciting activity to beat the heat.</string>
+
+    <string name="action_20">Try canine backpacking</string>
+    <string name="description_20">Canine backpacking involves carrying a backpack with supplies while hiking. It provides additional physical exertion, improves endurance, and allows your dog to contribute to the adventure. Backpacking also strengthens the bond between you and your pet through shared experiences.</string>
+
+    <string name="action_21">Attend obedience classes</string>
+    <string name="description_21">Obedience classes offer structured training environments, promoting discipline, focus, and improved communication between you and your dog. It enhances obedience skills, encourages socialization, and builds a strong foundation for well-behaved dogs.</string>
+
+    <string name="action_22">Engage in Canicross</string>
+    <string name="description_22">Canicross involves running or jogging with your dog while attached to a waist belt and a bungee line. It promotes teamwork, cardiovascular fitness, and builds strength for both you and your dog.</string>
+
+    <string name="action_23">Go on a camping adventure</string>
+    <string name="description_23">Camping with your dog allows you to disconnect from the daily routine, immerse in nature, and strengthen your bond. It provides physical exercise, mental stimulation, and a chance to explore new environments together.</string>
+
+    <string name="action_24">Practice cani-hiking</string>
+    <string name="description_24">Cani-hiking combines hiking and canicross. It involves hiking with your dog while attached to a waist belt and a bungee line, offering a challenging workout and an opportunity to explore nature\'s trails.</string>
+
+    <string name="action_25">Try dog-assisted therapy</string>
+    <string name="description_25">Dog-assisted therapy involves using dogs to support individuals in therapeutic settings. It provides emotional support, reduces stress and anxiety, and promotes overall well-being for those receiving the therapy.</string>
+
+    <string name="action_26">Engage in herding trials</string>
+    <string name="description_26">Herding trials allow dogs to showcase their natural herding instincts, working alongside you to guide livestock. This activity provides mental
+
+     stimulation, physical exercise, and reinforces the bond between you and your dog.</string>
+
+    <string name="action_27">Take your dog to the playground</string>
+    <string name="description_27">Visiting a dog-friendly playground provides opportunities for socialization, exercise, and playtime. It stimulates physical activity, improves coordination, and offers mental stimulation through interacting with other dogs and their owners.</string>
+
+    <string name="action_28">Participate in tracking exercises</string>
+    <string name="description_28">Tracking exercises engage your dog\'s scenting abilities to follow a scent trail. It promotes mental stimulation, builds focus, and enhances your dog's problem-solving skills.</string>
+
+    <string name="action_29">Try skijoring</string>
+    <string name="description_29">Skijoring involves cross-country skiing while being pulled by your dog. It provides a full-body workout, improves endurance, and offers a fun way to enjoy winter activities together.</string>
+
+    <string name="action_30">Engage in treibball</string>
+    <string name="description_30">Treibball is a sport that involves herding large exercise balls into a goal. It enhances communication, mental agility, and provides physical exercise for your dog while promoting teamwork and problem-solving.</string>
+
+    <string name="action_31">Take your dog to a pet-friendly yoga class</string>
+    <string name="description_31">Attending a pet-friendly yoga class allows you to bond with your dog while practicing yoga. It promotes relaxation, improves flexibility and balance, and strengthens the connection between you and your pet.</string>
 </resources>
