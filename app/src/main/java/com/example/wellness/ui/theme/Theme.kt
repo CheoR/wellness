@@ -49,7 +49,7 @@ private val LightColors = lightColorScheme(
 
 
 private val DarkColors = darkColorScheme(
-    primary = md_theme_dark_primary,
+    primary = md_theme_dark_secondary,
     onPrimary = md_theme_dark_onPrimary,
     primaryContainer = md_theme_dark_primaryContainer,
     onPrimaryContainer = md_theme_dark_onPrimaryContainer,
