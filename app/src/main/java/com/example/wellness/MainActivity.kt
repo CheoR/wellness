@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -31,8 +32,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.wellness.model.Day
 import com.example.wellness.ui.theme.WellnessTheme
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
+import com.example.wellness.data.Datasource
 
 class MainActivity : ComponentActivity() {
+    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -42,12 +48,17 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    DayCard(
-                        Day(
-                            R.string.day_3,
-                            R.string.description_3,
-                            R.drawable.unsplash_3,
-                        )
+//                    DayCard(
+//                        Day(
+//                            R.string.day_3,
+//                            R.string.description_3,
+//                            R.drawable.unsplash_3,
+//                        )
+//                    )
+                    Scaffold(
+                        content = {
+                            DayList(dayList = Datasource().loadDays())
+                        }
                     )
                 }
             }
@@ -75,7 +86,9 @@ fun DayCard(day: Day, modifier: Modifier = Modifier) {
             Text(
                 text = "Day #",
                 modifier = Modifier.padding(
+//                    TODO: adjust space between day and activity
                     horizontal = 16.dp,
+                    vertical = 4.dp,
                 ),
                 style = MaterialTheme.typography.bodySmall,
             )
@@ -154,30 +167,54 @@ fun DayCard(day: Day, modifier: Modifier = Modifier) {
     }
 }
 
-@Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    WellnessTheme(darkTheme = false) {
-        DayCard(
-            Day(
-                R.string.day_1,
-                R.string.description_1,
-                R.drawable.unsplash_1,
-            )
-        )
+private fun DayList(dayList: List<Day>, modifier: Modifier = Modifier) {
+    LazyColumn {
+        items(dayList){ day ->
+            DayCard(day)
+        }
     }
 }
 
-@Preview
+//@Preview(showBackground = true)
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun GreetingPreview() {
+    WellnessTheme(darkTheme = false) {
+//        DayCard(
+//            Day(
+//                R.string.day_1,
+//                R.string.description_1,
+//                R.drawable.unsplash_1,
+//            )
+//        )
+        Scaffold(
+            content = {
+                DayList(
+                    dayList = Datasource().loadDays(),
+                    modifier = Modifier,
+                )
+            }
+        )
+    }
+}
+//@Preview
+@OptIn(ExperimentalMaterial3Api::class)
+@Preview(showBackground = false)
 @Composable
 fun GreetingDarkPreview() {
     WellnessTheme(darkTheme = true) {
-        DayCard(
-            Day(
-                R.string.day_2,
-                R.string.description_2,
-                R.drawable.unsplash_2,
-            )
+//        DayCard(
+//            Day(
+//                R.string.day_2,
+//                R.string.description_2,
+//                R.drawable.unsplash_2,
+//            )
+//        )
+        Scaffold(
+            content = {
+                DayList(dayList = Datasource().loadDays())
+            }
         )
     }
 }
