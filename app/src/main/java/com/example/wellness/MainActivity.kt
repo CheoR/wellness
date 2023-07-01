@@ -48,18 +48,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-//                    DayCard(
-//                        Day(
-//                            R.string.day_3,
-//                            R.string.description_3,
-//                            R.drawable.unsplash_3,
-//                        )
-//                    )
-                    Scaffold(
-                        content = {
-                            DayList(dayList = Datasource().loadDays())
-                        }
-                    )
+                    WellnessApp()
                 }
             }
         }
@@ -73,12 +62,12 @@ fun DayCard(day: Day, modifier: Modifier = Modifier) {
     val image = painterResource(R.drawable.ic_launcher_foreground)
     val imgDescription = stringResource(R.string.img_description_11)
     Card(
-        elevation = CardDefaults.cardElevation(2.dp),
+        elevation = CardDefaults.cardElevation(dimensionResource(R.dimen.card_elevation)),
         modifier= modifier
 //            .background(color = Color.Blue)
             .padding(
-                horizontal = dimensionResource(id = R.dimen.padding_medium),
-                vertical = dimensionResource(id = R.dimen.padding_small),
+                horizontal = dimensionResource(R.dimen.padding_medium),
+                vertical = dimensionResource(R.dimen.padding_small),
             )
 
     ) {
@@ -87,14 +76,14 @@ fun DayCard(day: Day, modifier: Modifier = Modifier) {
                 text = "Day #",
                 modifier = Modifier.padding(
 //                    TODO: adjust space between day and activity
-                    horizontal = 16.dp,
-                    vertical = 4.dp,
+                    horizontal = dimensionResource(R.dimen.padding_medium),
+                    vertical = dimensionResource(R.dimen.padding_tiny),
                 ),
                 style = MaterialTheme.typography.bodySmall,
             )
             Text(
                 text = stringResource(day.stringResourceId),
-                modifier = Modifier.padding(16.dp),
+                modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
                 style = MaterialTheme.typography.bodySmall,
             )
             Image(
@@ -102,68 +91,16 @@ fun DayCard(day: Day, modifier: Modifier = Modifier) {
                 contentDescription = stringResource(day.descriptionResourceId),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(194.dp),
+                    .height(dimensionResource(R.dimen.img_height)),
                 contentScale = ContentScale.Crop
             )
             Text(
                 text = stringResource(day.descriptionResourceId),
-                modifier = Modifier.padding(16.dp),
+                modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
                 style = MaterialTheme.typography.bodySmall,
             )
 
         }
-//        Row(
-//            modifier = Modifier
-//                .fillMaxWidth()
-////                .background(color = Color.Red)
-//                .padding(16.dp),
-//        ){
-//            Column(
-//                modifier = Modifier
-//                    .fillMaxWidth()
-////                    .background(color=Color.Green)
-//            ) {
-//                Text(
-//                    text = "Day 1",
-//                    style = MaterialTheme.typography.labelSmall,
-//                    modifier = modifier
-//                        .fillMaxWidth()
-////                        .background(color = Color.Red)
-//
-//                        .padding(dimensionResource(R.dimen.padding_small)),
-//                )
-//                Text(
-//                    text = "Do this",
-//                    style = MaterialTheme.typography.headlineSmall,
-//                    modifier = modifier
-//                        .fillMaxWidth()
-////                        .background(color = Color.Yellow)
-//
-//                        .padding(dimensionResource(R.dimen.padding_small)),
-//                )
-//                Spacer(Modifier.width(16.dp))
-//                Box(modifier=modifier) {
-//                    Image(
-//                        painter = image,
-//                        contentDescription = imgDescription,
-//                        contentScale = ContentScale.FillWidth,
-//                        modifier = Modifier
-//                            .clip(MaterialTheme.shapes.small),
-//                    )
-//                }
-//                Spacer(Modifier.width(16.dp))
-//                Text(
-//                    text = "It is good for your health because",
-//                    style = MaterialTheme.typography.bodyMedium,
-//                    modifier = modifier
-//                        .fillMaxWidth()
-////                        .background(color = Color.Black)
-//
-//                        .padding(dimensionResource(R.dimen.padding_small)),
-//                )
-//            }
-//        }
-
     }
 }
 
@@ -176,45 +113,31 @@ private fun DayList(dayList: List<Day>, modifier: Modifier = Modifier) {
     }
 }
 
-//@Preview(showBackground = true)
 @OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun WellnessApp() {
+    Scaffold(
+        content = {
+            DayList(
+                dayList = Datasource().loadDays(),
+                modifier = Modifier,
+            )
+        }
+    )
+}
+
+@Preview(showBackground = false)
 @Composable
 fun GreetingPreview() {
     WellnessTheme(darkTheme = false) {
-//        DayCard(
-//            Day(
-//                R.string.day_1,
-//                R.string.description_1,
-//                R.drawable.unsplash_1,
-//            )
-//        )
-        Scaffold(
-            content = {
-                DayList(
-                    dayList = Datasource().loadDays(),
-                    modifier = Modifier,
-                )
-            }
-        )
+        WellnessApp()
     }
 }
-//@Preview
-@OptIn(ExperimentalMaterial3Api::class)
+
 @Preview(showBackground = false)
 @Composable
 fun GreetingDarkPreview() {
     WellnessTheme(darkTheme = true) {
-//        DayCard(
-//            Day(
-//                R.string.day_2,
-//                R.string.description_2,
-//                R.drawable.unsplash_2,
-//            )
-//        )
-        Scaffold(
-            content = {
-                DayList(dayList = Datasource().loadDays())
-            }
-        )
+        WellnessApp()
     }
 }
