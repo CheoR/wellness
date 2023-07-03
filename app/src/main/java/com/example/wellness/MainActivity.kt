@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Card
@@ -33,8 +34,10 @@ import androidx.compose.ui.unit.dp
 import com.example.wellness.model.Day
 import com.example.wellness.ui.theme.WellnessTheme
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
+import androidx.compose.ui.Alignment
 import com.example.wellness.data.Datasource
 
 class MainActivity : ComponentActivity() {
@@ -104,25 +107,55 @@ fun DayCard(day: Day, modifier: Modifier = Modifier) {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DayList(dayList: List<Day>, modifier: Modifier = Modifier) {
-    LazyColumn {
-        items(dayList){ day ->
-            DayCard(day)
+    Scaffold(
+        topBar = {
+            WellnessTopAppBar()
+        }
+    ) {it ->
+        LazyColumn(
+            contentPadding = it,
+        ) {
+            items(dayList){ day ->
+                DayCard(day)
+            }
         }
     }
+
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun WellnessApp() {
-    Scaffold(
-        content = {
-            DayList(
-                dayList = Datasource().loadDays(),
-                modifier = Modifier,
+fun WellnessTopAppBar(modifier: Modifier = Modifier) {
+    CenterAlignedTopAppBar(
+        title = {
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Image(
+                    modifier = Modifier
+                        .size(dimensionResource(id = R.dimen.topbar_img_height))
+                        .padding(dimensionResource(id = R.dimen.padding_small)),
+                    painter = painterResource(R.drawable.ic_woof_logo),
+                    contentDescription = null
+                )
+            }
+            Text(
+                text = stringResource(R.string.app_name),
+                style = MaterialTheme.typography.displayLarge
             )
-        }
+        },
+        modifier = modifier,
+    )
+}
+
+@Composable
+private fun WellnessApp() {
+    DayList(
+        dayList = Datasource().loadDays(),
+        modifier = Modifier,
     )
 }
 
