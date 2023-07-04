@@ -141,11 +141,11 @@ fun WellnessTopAppBar(modifier: Modifier = Modifier) {
                     painter = painterResource(R.drawable.ic_woof_logo),
                     contentDescription = null
                 )
+                Text(
+                    text = stringResource(R.string.app_name),
+                    style = MaterialTheme.typography.displayLarge
+                )
             }
-            Text(
-                text = stringResource(R.string.app_name),
-                style = MaterialTheme.typography.displayLarge
-            )
         },
         modifier = modifier,
     )
