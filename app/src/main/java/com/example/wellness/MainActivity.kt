@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.dp
 import com.example.wellness.model.Day
 import com.example.wellness.ui.theme.WellnessTheme
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
@@ -67,7 +68,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun DayCard(day: Day, modifier: Modifier = Modifier) {
+fun DayCard(index: Int, day: Day, modifier: Modifier = Modifier) {
     // TODO: figure out why img size causes error when img size
     // for other prjoects are bigger than these images
     val image = painterResource(R.drawable.ic_launcher_foreground)
@@ -88,7 +89,7 @@ fun DayCard(day: Day, modifier: Modifier = Modifier) {
     ) {
         Column() {
             Text(
-                text = "Day #",
+                text = "Day $index",
                 modifier = Modifier.padding(
 //                    TODO: adjust space between day and activity
                     horizontal = dimensionResource(R.dimen.padding_medium),
@@ -131,8 +132,8 @@ private fun DayList(dayList: List<Day>, modifier: Modifier = Modifier) {
         LazyColumn(
             contentPadding = it,
         ) {
-            items(dayList){ day ->
-                DayCard(day)
+            itemsIndexed(dayList){ index, day ->
+                DayCard(index + 1, day)
             }
         }
     }
