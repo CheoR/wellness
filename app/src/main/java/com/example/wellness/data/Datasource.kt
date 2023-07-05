@@ -104,7 +104,17 @@ class Datasource() {
             ),
             Day(
                 stringResourceId = R.string.day_20,
+                imageResourceId = R.drawable.unsplash_20,
+                descriptionResourceId = R.string.description_20,
+            ),
+            Day(
+                stringResourceId = R.string.day_21,
                 imageResourceId = R.drawable.unsplash_21,
+                descriptionResourceId = R.string.description_21,
+            ),
+            Day(
+                stringResourceId = R.string.day_22,
+                imageResourceId = R.drawable.unsplash_22,
                 descriptionResourceId = R.string.description_22,
             ),
             Day(
