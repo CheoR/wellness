@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -37,9 +38,16 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import com.example.wellness.data.Datasource
-
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,6 +72,7 @@ fun DayCard(day: Day, modifier: Modifier = Modifier) {
     // for other prjoects are bigger than these images
     val image = painterResource(R.drawable.ic_launcher_foreground)
     val imgDescription = stringResource(R.string.img_description_11)
+    var expanded by remember { mutableStateOf(false) }
     Card(
         elevation = CardDefaults.cardElevation(dimensionResource(R.dimen.card_elevation)),
         modifier= modifier
@@ -72,6 +81,9 @@ fun DayCard(day: Day, modifier: Modifier = Modifier) {
                 horizontal = dimensionResource(R.dimen.padding_medium),
                 vertical = dimensionResource(R.dimen.padding_small),
             )
+            .clickable{
+                expanded = !expanded
+            }
 
     ) {
         Column() {
@@ -92,17 +104,18 @@ fun DayCard(day: Day, modifier: Modifier = Modifier) {
             Image(
                 painter = painterResource(day.imageResourceId),
                 contentDescription = stringResource(day.descriptionResourceId),
+                contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(dimensionResource(R.dimen.img_height)),
-                contentScale = ContentScale.Crop
             )
-            Text(
-                text = stringResource(day.descriptionResourceId),
-                modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
-                style = MaterialTheme.typography.bodySmall,
-            )
-
+            if(expanded) {
+                Text(
+                    text = stringResource(day.descriptionResourceId),
+                    modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
+                    style = MaterialTheme.typography.bodySmall,
+                )
+            }
         }
     }
 }
