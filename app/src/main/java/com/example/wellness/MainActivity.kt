@@ -69,10 +69,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun DayCard(index: Int, day: Day, modifier: Modifier = Modifier) {
-    // TODO: figure out why img size causes error when img size
-    // for other prjoects are bigger than these images
-    val image = painterResource(R.drawable.ic_launcher_foreground)
-    val imgDescription = stringResource(R.string.img_description_11)
+    // TODO: scrolling slow cause imgs
     var expanded by remember { mutableStateOf(false) }
     Card(
         elevation = CardDefaults.cardElevation(dimensionResource(R.dimen.card_elevation)),
